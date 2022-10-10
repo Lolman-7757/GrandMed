@@ -1,0 +1,16 @@
+.home form{
+    display: flex;
+    flex-direction: column;
+}
+.home-inputs{
+    margin-top: 20px;
+}
+.submit-btn{
+    margin-top: 20px;
+    width: 100px;
+    padding: 5px;
+    transition: linear .5s all;
+}
+.submit-btn_cant{
+    transform: translateX(150px);
+}
