@@ -1,33 +1,62 @@
 import React from 'react'
-import CallUsButton from '../CallUsButton/CallUsButton'
-// Components
-import GPS from '../GPS'
-// Styles
 import './Footer.css'
-
+import { Link } from 'react-router-dom'
+import Logo from '../Logo/Logo'
+import { BsFacebook, BsInstagram, BsTwitter, BsYoutube } from 'react-icons/bs'
+import { Input } from '@nextui-org/react'
 
 function Footer() {
     return (
-        <footer id='#contacts'>
-            <div className='container'>
-                <nav className='contacts'>
-                    <h2>Контакты</h2>
-                    <div className='contacts-item'>
-                        <h3>Телефон</h3>
-                        <a href='tel:+998913821334' className='contacts-item_subtitle'>Единый коллцентр : +998 91 382-13-34</a>
+        <footer>
+            <div className='container b1'>
+                <div className='footer_upper'>
+                    <div className='footer_logo'>
+                        <div className='footer_logo_name'>
+                            <Logo/>
+                            Connectron
+                        </div>
+                        <span>Qaraqalpaqstan, Nukus, st.Bilmimen</span>
+                        <span className='footer_logo_contact'>Contact Us: <a href='tel:+998913030519'>+998-91-303-05-19</a></span>
+                        <nav className='social-media'>
+                            <a href='https://facebook.com'><BsFacebook/></a>
+                            <a href='https://instagram.com' className='last'><BsInstagram/></a>
+                            <a href='https://twitter.com' className='last'><BsTwitter/></a>
+                            <a href='https://youtube.com' className='last'><BsYoutube/></a>
+                        </nav>
                     </div>
-                    <div className='contacts-item'>
-                        <h3>Адресс</h3>
-                        <h4 className='contacts-item_subtitle'>Ташкентская область, Кибрайский район, городской посёлок Салар, улица Гулимамур, 5/1</h4>
+                    <div className='footer_nav'>
+                        <ul>
+                            <li className='footer_nav-title'>Category</li>
+                            <li>Home</li>
+                            <li>About</li>
+                            <li>Services</li>
+                            <li>Reviews</li>
+                        </ul>
+                        <ul>
+                            <li className='footer_nav-title'>About</li>
+                            <li>Partners</li>
+                            <li>Careers</li>
+                            <li>Community</li>
+                            <li>Support</li>
+                        </ul>
                     </div>
-                    <div className='contacts-item'>
-                        <h3>Соц сети</h3>
-                        <h4 className='contacts-item_subtitle'>Подпишитесь</h4>
+                    <div className='footer_subscribe'>
+                        <span className='footer_subscribe-title'>Subscribe newsletter</span>
+                        <span className='footer_subscribe-descr'>Sign up for tips, new offers, and exclusive promos.</span>
+                        <form>
+                        <Input  placeholder='Enter your mail' />
+                            <button className='btn_style'>Subscribe</button>
+                        </form>
                     </div>
-                    <CallUsButton />
-                    <a className='contacts-copyright' href='https://www.instagram.com/lolman_nnnn'> © 2022 Copyright | Создание сайта Lolman</a>
-                </nav>
-                <GPS />
+                </div>
+                <div className='footer_bottom'>
+                    <div className='footer_rights'>© 2023 Lolman - All rights reserved.</div>
+                    <ul className='footer_terms'>
+                        <Link>Privacy</Link>
+                        <Link>Security</Link>
+                        <Link>Terms</Link>
+                    </ul>
+                </div>
             </div>
         </footer>
     )

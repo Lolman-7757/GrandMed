@@ -1,198 +1,88 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
+/* FONT */
+  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fredoka:wght@300;400;500;600;700&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video {
+
+body,#root{
+  caret-color: transparent; 
+  color: white;
+  background-color: #1D1B26;
   margin: 0;
   padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-}
-
-/* HTML5 display-role reset for older browsers */
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
-  display: block;
-}
-
-body {
-  line-height: 1;
-}
-
-ol,
-ul {
-  list-style: none;
-}
-
-blockquote,
-q {
-  quotes: none;
-}
-
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-  content: '';
-  content: none;
-}
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-body {
-  font-family: 'Montserrat';
   width: 100%;
-  height: 100%;
+  font-family: 'DM Sans';
+  min-height: 100vh;
   display: flex;
-  align-items: center;
   justify-content: center;
-}
-
-#root {
-  width: 100%;
-  height: 100%;
-  display: flex;
   align-items: center;
-  flex-direction: column;
 }
-
-a,
-a:active,
-a:hover {
+@media(min-width:1200px){
+  #root{
+    justify-content: flex-start !important;
+  }
+}
+li{
+  list-style-type: none;
+}
+a{
   text-decoration: none;
 }
+#root{
+  flex-direction: column;
+  justify-content: space-between !important;
+}
 
-section {
+/* BORDER ANIMATION */
+.border-animation:after{
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  height: 2px;
+  width: 0px;
+  background-color: white;
+  transition: all .3s linear;
+}
+.border-animation:hover:after{
   width: 100%;
-  min-height: 100vh;
-  margin-top: 150px;
 }
 
-/* Google Maps Styles */
-.mapouter {
-  flex-basis: 40%;
-  height: 478px;
-}
+/* ADAPTIVE / RESPONSIVE CONTAINER */
+.b{
 
-.gmap_canvas {
-  overflow: hidden;
-  background: none !important;
-  width: 100%;
-  height: 478px;
+  border: 1px solid black;
 }
-
-.gmap_iframe {
-  height: 478px !important;
-}
-
-/* MEDIA */
 .container{
-  display: flex;
-  min-width: 1150px;
-  padding: 0 20px;
+  max-width: 1200px;
+  padding: 0px 15px;
+  margin: 0px auto;
+  height: 100%;
 }
-@media (max-width: 1200px) {
+@media(min-width: 1201px){
   .container{
-    min-width: 950px;
+    width: 95%;
   }
 }
-@media (max-width: 992px) {
+@media(max-width: 1200px){
   .container{
-    min-width: 748px;
+    width: 1000px;
   }
+}
+@media(max-width: 1000px){
+  .container{
+    width: 767px;
+  }
+}
+@media(max-width: 768px){
+  .container{
+    width: 479px;
+  }
+}
+@media(max-width: 480px){
+  .container{
+    width: 90%;
+  }
+}
+
+main{
+  width: 100%;
 }

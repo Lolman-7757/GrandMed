@@ -1,0 +1,10 @@
+.logo {
+    width: 100px;
+    height: 100px;
+    transition: .5s all;
+    cursor: pointer;
+}
+
+.logo:hover {
+    transform: scale(1.2) rotate(90deg);
+}
