@@ -33,7 +33,7 @@ function Header() {
                         <li className='border-animation'><Link>Portfolio</Link></li>
                         <li className='border-animation'><Link>Blog</Link></li>
                     </ul>
-                    <button className='btn_style'>Contact Us </button>
+                    <a href='mailto:' className='btn_style'>Contact Us </a>
                 </div>
             </nav>
         </header>

@@ -4,11 +4,40 @@ import { RxRocket } from 'react-icons/rx'
 import { MdOutlineGroups, MdOutlineDesignServices, MdDeveloperMode } from 'react-icons/md'
 import { AiOutlineLike, AiOutlineAppstore } from 'react-icons/ai'
 import { BsChevronRight } from 'react-icons/bs'
+import TextArea from 'antd/es/input/TextArea'
 // STYLE
 import './Home.css'
-import TextArea from 'antd/es/input/TextArea'
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/effect-coverflow";
+import "swiper/css/pagination";
+
+// import required modules
+import { EffectCoverflow, Pagination } from "swiper";
 
 function Home() {
+    // SLICK SLIDER SETTINGS
+    const settings = {
+        className: "center",
+        centerMode: true,
+        infinite: true,
+        centerPadding: "60px",
+        slidesToShow: 3,
+        speed: 500
+    };
+    const developers = [
+        { id: 1, content: 'First' , img: 'https://wallpaperaccess.com/full/6999295.jpg'},
+        { id: 2, content: 'Second', img: 'https://wallpaperaccess.com/full/6999297.jpg' },
+        { id: 3, content: 'Third' , img: 'https://wallpaperaccess.com/full/6999298.jpg'},
+        { id: 4, content: 'Fourth', img: 'https://wallpaperaccess.com/full/6999296.jpg' },
+        { id: 5, content: 'Fifth', img: 'https://wallpaperaccess.com/full/6999299.jpg' },
+        { id: 6, content: 'Sixth', img: 'https://wallpaperaccess.com/full/6999300.jpg' }
+    ]
+
+
     if (window.scrollY > 300) {
         console.log('yes')
     } else {
@@ -86,6 +115,38 @@ function Home() {
                         </div>
                     </div>
                 </div>
+            </section>
+            <section className='developers'>
+                <Swiper
+                    effect={"coverflow"}
+                    grabCursor={true}
+                    centeredSlides={true}
+                    slidesPerView={3}
+                    coverflowEffect={{
+                        rotate: 50,
+                        stretch: 0,
+                        depth: 100,
+                        modifier: 1,
+                        slideShadows: true,
+                    }}
+                    pagination={true}
+                    modules={[EffectCoverflow, Pagination]}
+                    className="mySwiper"
+                >
+                {
+                    developers.map((dev, devID) => {
+                        return (
+                            <SwiperSlide key={devID}>
+                                <div className='developers_item'>
+                                    <img src={dev.img}/>
+                                    {dev.content}
+                                </div>
+                            </SwiperSlide>
+                        )
+                    })
+                }
+                </Swiper>
+
             </section>
             <section className='contact'>
                 <div className='container'>

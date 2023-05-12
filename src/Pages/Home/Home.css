@@ -178,7 +178,11 @@ background: linear-gradient(180deg, #1D1B26, #000000); */
     transform: scale(1.1);
 }
 .service_offer-wrapper:hover .service_offer-item{
-    border-color: white !important;
+    border: 2px solid #eb4eeb !important;
+}
+.service_offer-wrapper:hover .service_offer-icon{
+    border: 2px solid #eb4eeb !important;
+    transition: linear all .2s;
 }
 
 .service_offer-item {
@@ -323,6 +327,38 @@ input{
     outline: none;
 }
 
+/* DEVELOPERS BLOCK */
+.developers{
+    width: 100%;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.developers .swiper-slide{
+    text-align: center;
+}
+.developers .swiper-coverflow{
+    width: 100%;
+}
+.developers_item{
+    width: 100%;
+    height: 500px;
+    border: 2px solid white;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.developers_item img{
+    width: 100%;
+    height: 50%;
+    flex-basis: 50%;
+    transform: scale(0.9);
+}
+
+
 @media (max-width: 1200px) {
     .home_text {
         margin-top: 50px;
@@ -361,7 +397,7 @@ input{
         flex-wrap: wrap;
     }
     .service_offer{
-        justify-content: space-around;
+        /* justify-content: space-around; */
     }
     .service_offer-wrapper{
         flex-basis: 35%;
