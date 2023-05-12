@@ -29,12 +29,12 @@ function Home() {
         speed: 500
     };
     const developers = [
-        { id: 1, content: 'First' , img: 'https://wallpaperaccess.com/full/6999295.jpg'},
-        { id: 2, content: 'Second', img: 'https://wallpaperaccess.com/full/6999297.jpg' },
-        { id: 3, content: 'Third' , img: 'https://wallpaperaccess.com/full/6999298.jpg'},
-        { id: 4, content: 'Fourth', img: 'https://wallpaperaccess.com/full/6999296.jpg' },
-        { id: 5, content: 'Fifth', img: 'https://wallpaperaccess.com/full/6999299.jpg' },
-        { id: 6, content: 'Sixth', img: 'https://wallpaperaccess.com/full/6999300.jpg' }
+        { id: 1, content:{name:'John Doe',job:'Frontend Developer'} , img: 'https://wallpaperaccess.com/full/6999295.jpg'},
+        { id: 2, content:{name:'John Doe',job:'Frontend Developer'}, img: 'https://wallpaperaccess.com/full/6999297.jpg' },
+        { id: 3, content:{name:'John Doe',job:'Frontend Developer'} , img: 'https://wallpaperaccess.com/full/6999298.jpg'},
+        { id: 4, content:{name:'John Doe',job:'Frontend Developer'}, img: 'https://wallpaperaccess.com/full/6999296.jpg' },
+        { id: 5, content:{name:'John Doe',job:'Frontend Developer'}, img: 'https://wallpaperaccess.com/full/6999299.jpg' },
+        { id: 6, content:{name:'John Doe',job:'Frontend Developer'}, img: 'https://wallpaperaccess.com/full/6999300.jpg' }
     ]
 
 
@@ -121,7 +121,7 @@ function Home() {
                     effect={"coverflow"}
                     grabCursor={true}
                     centeredSlides={true}
-                    slidesPerView={3}
+                    slidesPerView={1.5}
                     coverflowEffect={{
                         rotate: 50,
                         stretch: 0,
@@ -139,7 +139,8 @@ function Home() {
                             <SwiperSlide key={devID}>
                                 <div className='developers_item'>
                                     <img src={dev.img}/>
-                                    {dev.content}
+                                    <p>{dev.content.name}</p>
+                                    <p>{dev.content.job}</p>
                                 </div>
                             </SwiperSlide>
                         )
